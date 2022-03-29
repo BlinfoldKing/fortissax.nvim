@@ -20,7 +20,7 @@ wk.register({
         name = "language",
         t = {
             name = "tag and symbol",
-            o = { "<cmd>SymbolOutline<cr>", "outline" },
+            o = { "<cmd>SymbolsOutline<cr>", "outline" },
             f = { "<cmd>Telescope treesitter<cr>", "find symbol" },
         }
     },
