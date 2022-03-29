@@ -24,5 +24,11 @@ wk.register({
             f = { "<cmd>Telescope treesitter<cr>", "find symbol" },
         }
     },
+    t = {
+        name = "terminal",
+        t = { "<cmd>ToggleTerm direction=float<cr>", "float" },
+        h = { "<cmd>ToggleTerm size=20 direction=horizontal<cr>", "horizontal" },
+        v = { "<cmd>ToggleTerm size=50 direction=vertical<cr>", "vertical" },
+    },
     q = { "<cmd>q<cr>", "quit" }
 }, { prefix = "<leader>" })

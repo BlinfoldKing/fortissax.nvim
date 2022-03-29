@@ -26,10 +26,12 @@ set foldlevel=2
 syntax on
 
 set termguicolors
-colorscheme sonokai
-
 
 augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | Neoformat
 augroup END
+
+tnoremap <Esc> <C-\><C-n>
+
+source ~/.config/nvim/user.profile.vim

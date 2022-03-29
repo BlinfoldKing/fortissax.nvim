@@ -67,6 +67,7 @@ use "tpope/vim-commentary"
 
 -- theme and cosmetic
 use "sainnhe/sonokai"
+use "thedenisnikulin/vim-cyberpunk"
 use {
     'sunjon/shade.nvim',
     config = require("config/shade")
