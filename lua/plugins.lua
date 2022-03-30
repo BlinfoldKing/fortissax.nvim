@@ -77,6 +77,12 @@ return require("packer").startup {
         use "tpope/vim-commentary"
 
         -- theme and cosmetic
+        use {
+            'norcalli/nvim-colorizer.lua',
+            config = function()
+                require('colorizer').setup()
+            end
+        }
         use "sainnhe/sonokai"
         use "thedenisnikulin/vim-cyberpunk"
         use {
@@ -88,7 +94,7 @@ return require("packer").startup {
             config = [[require("config.dashboard")]]
         }
         use "folke/twilight.nvim"
-
+        use "rktjmp/lush.nvim"
 
         -- language support
         use {'ms-jpq/coq_nvim', branch = 'coq'}
@@ -96,7 +102,7 @@ return require("packer").startup {
         use 'neovim/nvim-lspconfig'
         use {
             'williamboman/nvim-lsp-installer',
-            config = require('config.lsp_installer'),
+            config = require('config/lsp_installer')
         }
         use {
             'nvim-treesitter/nvim-treesitter',
