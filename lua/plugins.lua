@@ -27,10 +27,6 @@ return require("packer").startup {
         -- actual plugins list
         use "wbthomason/packer.nvim"
 
-        function get_config(name)
-            return string.format("[[require(\"config.%s\")", name)
-        end
-
         -- TODO: reactivate when bug is fixed
         -- use 'ggandor/lightspeed.nvim'
         use "easymotion/vim-easymotion"
@@ -72,30 +68,8 @@ return require("packer").startup {
         use "tpope/vim-surround"
         use "tpope/vim-repeat"
         use "jiangmiao/auto-pairs"
-        use "yggdroot/indentline"
         use "ervandew/supertab"
         use "tpope/vim-commentary"
-
-        -- theme and cosmetic
-        use '~/.config/nvim/dragonlich'
-        use {
-            'norcalli/nvim-colorizer.lua',
-            config = function()
-                require('colorizer').setup()
-            end
-        }
-        use "sainnhe/sonokai"
-        use "thedenisnikulin/vim-cyberpunk"
-        use {
-            'sunjon/shade.nvim',
-            config = [[require("config.shade")]]
-        }
-        use {
-            "glepnir/dashboard-nvim",
-            config = [[require("config.dashboard")]]
-        }
-        use "folke/twilight.nvim"
-        use "rktjmp/lush.nvim"
 
         -- language support
         use {'ms-jpq/coq_nvim', branch = 'coq'}
@@ -140,6 +114,29 @@ return require("packer").startup {
             "jose-elias-alvarez/null-ls.nvim",
             config = [[require("config.null-ls")]],
         }
+
+        -- theme and cosmetic
+        use '~/.config/nvim/dragonlich'
+        use {
+            'norcalli/nvim-colorizer.lua',
+            config = function()
+                require('colorizer').setup()
+            end
+        }
+        use "sainnhe/sonokai"
+        use "thedenisnikulin/vim-cyberpunk"
+        use {
+            'sunjon/shade.nvim',
+            config = [[require("config.shade")]]
+        }
+        use {
+            "glepnir/dashboard-nvim",
+            config = [[require("config.dashboard")]]
+        }
+        use "folke/twilight.nvim"
+        use "rktjmp/lush.nvim"
+
+
         -- first time init
         if first then
             vim.api.nvim_command("PackerSync")
