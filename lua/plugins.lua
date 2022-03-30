@@ -77,6 +77,7 @@ return require("packer").startup {
         use "tpope/vim-commentary"
 
         -- theme and cosmetic
+        use '~/.config/nvim/dragonlich'
         use {
             'norcalli/nvim-colorizer.lua',
             config = function()

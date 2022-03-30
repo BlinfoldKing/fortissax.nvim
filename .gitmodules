@@ -1,0 +1,3 @@
+[submodule "dragonlich"]
+	path = dragonlich
+	url = git@github.com:BlinfoldKing/dragonlich.nvim.git

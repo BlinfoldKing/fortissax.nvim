@@ -14,7 +14,6 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set mouse=a
-set colorcolumn=80
 set background=dark
 set t_Co=256
 set encoding=UTF-8
