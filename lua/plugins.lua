@@ -93,10 +93,10 @@ return require("packer").startup {
         -- language support
         use {'ms-jpq/coq_nvim', branch = 'coq'}
         use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
+        use 'neovim/nvim-lspconfig'
         use {
-            'neovim/nvim-lspconfig',
             'williamboman/nvim-lsp-installer',
-            config = [[require("config.lsp_installer")]],
+            config = require('config.lsp_installer'),
         }
         use {
             'nvim-treesitter/nvim-treesitter',
