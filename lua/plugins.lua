@@ -2,10 +2,8 @@ local execute = vim.api.nvim_command
 
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
-local first = false
 -- bootstrap packer if not installed
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    first = true
     vim.fn.system({
         "git", "clone", "https://github.com/wbthomason/packer.nvim",
         install_path
@@ -46,7 +44,6 @@ return require("packer").startup {
 
         -- git
         use "tpope/vim-fugitive"
-        use "airblade/vim-gitgutter"
         use {
             'lewis6991/gitsigns.nvim',
             config = [[require("config.gitsigns")]]
@@ -98,11 +95,7 @@ return require("packer").startup {
 
         use {
           "folke/trouble.nvim",
-          requires = "kyazdani42/nvim-web-devicons",
-          config = function()
-            require("trouble").setup {
-            }
-          end
+          config = [[require("config.trouble")]]
         }
 
         use {
@@ -169,12 +162,6 @@ return require("packer").startup {
 
         use 'sindrets/winshift.nvim'
         use 'luukvbaal/stabilize.nvim'
-
-        -- first time init
-        if first then
-            vim.api.nvim_command("COQdeps")
-        end
-
     end,
     config = {
 		log = { level = os.getenv "PACKER_LOG_LEVEL" or "warn" },

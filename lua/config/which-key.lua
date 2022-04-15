@@ -11,9 +11,9 @@ wk.register({
         b = { "<cmd>Telescope buffers<cr>", "find buffer" },
         p = { "<cmd>Telescope live_grep<cr>", "find pattern" },
     },
-    w = {
+    s = {
         name = "save",
-        w = { "<cmd>w<cr>", "save" },
+        s = { "<cmd>w<cr>", "save" },
         q = { "<cmd>wq<cr>", "save and quit" }
     },
     g = {
@@ -51,6 +51,10 @@ wk.register({
         t = { "<cmd>ToggleTerm direction=float<cr>", "float" },
         h = { "<cmd>ToggleTerm size=20 direction=horizontal<cr>", "horizontal" },
         v = { "<cmd>ToggleTerm size=50 direction=vertical<cr>", "vertical" },
+    },
+    w = {
+        name = "window",
+        s = { "<cmd>WinShift<cr>", "shift window" },
     },
     q = { "<cmd>qa!<cr>", "close all and exit" }
 }, { prefix = "<space>" })

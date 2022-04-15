@@ -16,3 +16,7 @@ RUN apt-get update && \
     build-essential && \
     add-apt-repository ppa:neovim-ppa/unstable && \
     apt-get install -y neovim
+
+WORKDIR /root/.config/nvim
+
+RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
