@@ -2,6 +2,7 @@
 " to override the default config
 
 set hidden
+set nu
 set relativenumber
 set cursorline
 set splitbelow
