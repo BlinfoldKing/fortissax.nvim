@@ -126,10 +126,7 @@ return require("packer").startup {
         }
         use "sainnhe/sonokai"
         use "thedenisnikulin/vim-cyberpunk"
-        use {
-            'sunjon/shade.nvim',
-            config = [[require("config.shade")]]
-        }
+
         use {
             "glepnir/dashboard-nvim",
             config = [[require("config.dashboard")]]

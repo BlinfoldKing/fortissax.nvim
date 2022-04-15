@@ -6,8 +6,9 @@ ENV LANGUAGE en_US:en
 
 COPY ./ /root/.config/nvim
 
-RUN apt-get update && \
-    apt-get install -yq tzdata && \
+RUN apt-get update
+
+RUN apt-get install -yq tzdata && \
     ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata && \
     apt-get install -y software-properties-common \
@@ -19,4 +20,4 @@ RUN apt-get update && \
 
 WORKDIR /root/.config/nvim
 
-RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' -c 'COQdeps'
