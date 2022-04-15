@@ -160,8 +160,17 @@ return require("packer").startup {
             end
         }
 
+        -- windows utils
         use 'sindrets/winshift.nvim'
         use 'luukvbaal/stabilize.nvim'
+
+        -- test and debug
+        use { 
+            "rcarriga/vim-ultest",
+            requires = {"vim-test/vim-test"},
+            run = ":UpdateRemotePlugins",
+            config = [[require("config.ultest")]]
+        }
     end,
     config = {
 		log = { level = os.getenv "PACKER_LOG_LEVEL" or "warn" },
