@@ -30,13 +30,19 @@ return require("packer").startup {
         -- TODO: reactivate when bug is fixed
         -- use 'ggandor/lightspeed.nvim'
         use "easymotion/vim-easymotion"
-        use "kyazdani42/nvim-web-devicons"
-        use "romgrk/barbar.nvim"
+        use {
+            'akinsho/bufferline.nvim',
+            tag = "*",
+            config = [[require('config.bufferline')]]
+        }
         use {
             "nvim-lualine/lualine.nvim",
             config = [[require('config.lualine')]]
         }
-        use "akinsho/toggleterm.nvim"
+        use {
+            "akinsho/toggleterm.nvim",
+            config = [[require('config.toggleterm')]]
+        }
 
         -- git
         use "tpope/vim-fugitive"
@@ -77,7 +83,7 @@ return require("packer").startup {
         use 'neovim/nvim-lspconfig'
         use {
             'williamboman/nvim-lsp-installer',
-            config = require('config/lsp_installer')
+            config = [[require('config/lsp_installer')]]
         }
         use {
             'nvim-treesitter/nvim-treesitter',
@@ -114,10 +120,12 @@ return require("packer").startup {
             "jose-elias-alvarez/null-ls.nvim",
             config = [[require("config.null-ls")]],
         }
+        use "wellle/targets.vim"
 
         -- theme and cosmetic
-        use '~/.config/nvim/dragonlich'
-        use {
+       use 'tiagovla/tokyodark.nvim'
+       use 'yashguptaz/calvera-dark.nvim'
+       use {
             'norcalli/nvim-colorizer.lua',
             config = function()
                 require('colorizer').setup()
@@ -136,11 +144,34 @@ return require("packer").startup {
         use "folke/twilight.nvim"
         use "rktjmp/lush.nvim"
 
+        use {
+            'petertriho/nvim-scrollbar',
+            config = function()
+                require('scrollbar').setup {}
+            end
+        }
+
+        use "kyazdani42/nvim-web-devicons"
+        -- use "yamatsum/nvim-nonicons"
+        use "romgrk/nvim-treesitter-context"
+        use {
+            "nacro90/numb.nvim",
+            config = function()
+                require('numb').setup()
+            end
+        }
+        use {
+            "chentau/marks.nvim",
+            config = function()
+                require'marks'.setup {}
+            end
+        }
+
+        use 'sindrets/winshift.nvim'
+        use 'luukvbaal/stabilize.nvim'
 
         -- first time init
         if first then
-            vim.api.nvim_command("PackerSync")
-            vim.api.nvim_command("PackerCompile")
             vim.api.nvim_command("COQdeps")
         end
 

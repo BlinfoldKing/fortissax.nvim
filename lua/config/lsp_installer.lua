@@ -1,10 +1,17 @@
 local lsp_installer = require("nvim-lsp-installer")
 local coq = require("coq")
 
+
+local custom_attach = function(client, bufnr)
+
+end
+
 -- Register a handler that will be called for each installed server when it's ready (i.e. when installation is finished
 -- or if the server is already installed).
 lsp_installer.on_server_ready(function(server)
-    local opts = {}
+    local opts = {
+        on_attach = custom_attach,
+    }
 
     -- (optional) Customize the options passed to the server
     -- if server.name == "tsserver" then
