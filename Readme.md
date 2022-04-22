@@ -1,12 +1,12 @@
 # Fortissax
-![preview](./docs/ss.png)
+![dashboard](./docs/dashboard.png)
 
 ## About
 Modern and general purpose neovim preconfigure distribution, written in lua.
 
 ### Features
 
-![dashboard](./docs/dashboard.png)
+![preview](./docs/ss.png)
 
 * Autocomplete
 * Git integration
