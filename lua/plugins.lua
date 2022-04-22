@@ -162,12 +162,15 @@ return require("packer").startup {
         use 'luukvbaal/stabilize.nvim'
 
         -- test and debug
-        use { 
+        use {
             "rcarriga/vim-ultest",
             requires = {"vim-test/vim-test"},
             run = ":UpdateRemotePlugins",
             config = [[require("config.ultest")]]
         }
+
+        -- development
+        use 'jbyuki/instant.nvim'
     end,
     config = {
 		log = { level = os.getenv "PACKER_LOG_LEVEL" or "warn" },

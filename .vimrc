@@ -21,3 +21,5 @@ set nofoldenable
 
 
 colorscheme tokyodark
+
+let g:instant_username = "blinfoldking"
