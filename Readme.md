@@ -23,6 +23,7 @@ requirement:
 * neovim >= 0.7
 * git
 * python3-env
+* python3-nvim
 
 after all requirement complete run command below:  
 ```bash
