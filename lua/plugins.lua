@@ -156,6 +156,7 @@ return require("packer").startup {
                 require'marks'.setup {}
             end
         }
+        use "mg979/vim-visual-multi"
 
         -- windows utils
         use 'sindrets/winshift.nvim'
