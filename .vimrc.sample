@@ -1,0 +1,6 @@
+" put your custom config here
+" to override the default config
+
+set relativenumber
+colorscheme sonokai
+let g:instant_username = "blinfoldking"
