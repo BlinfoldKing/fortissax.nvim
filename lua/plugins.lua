@@ -1,3 +1,5 @@
+local nix_mode,_ = ...
+
 local execute = vim.api.nvim_command
 
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -19,6 +21,14 @@ packer.init {
 }
 local use = packer.use
 
+function load(module)
+    if nix_mode == true then
+        return dofile(string.format('/etc/nixos/nvim/lua/config/%s.lua', module))
+    else
+        return require("config.bufferline")
+    end
+end
+
 return require("packer").startup {
 	function()
 
@@ -31,33 +41,33 @@ return require("packer").startup {
         use {
             'akinsho/bufferline.nvim',
             tag = "*",
-            config = [[require('config.bufferline')]]
+            config = load('bufferline')
         }
         use {
             "nvim-lualine/lualine.nvim",
-            config = [[require('config.lualine')]]
+            config = load('lualine')
         }
         use {
             "akinsho/toggleterm.nvim",
-            config = [[require('config.toggleterm')]]
+            config = load('toggleterm')
         }
 
         -- git
         use "tpope/vim-fugitive"
         use {
             'lewis6991/gitsigns.nvim',
-            config = [[require("config.gitsigns")]]
+            config = load('gitsigns')
         }
 
         -- util
         use {
             "kyazdani42/nvim-tree.lua",
-            config = [[require("config.nvim-tree")]]
+            config = load('nvim-tree')
         }
 
         use {
             "folke/which-key.nvim",
-            config = [[require("config.which-key")]]
+            config = load('which-key')
         }
 
         use 'nvim-lua/plenary.nvim'
@@ -80,38 +90,38 @@ return require("packer").startup {
         use 'neovim/nvim-lspconfig'
         use {
             'williamboman/nvim-lsp-installer',
-            config = [[require('config/lsp_installer')]]
+            config = load('lsp_installer')
         }
         use {
             'nvim-treesitter/nvim-treesitter',
             run = ':TSUpdate',
-            config = [[require("config.tree-sitter")]]
+            config = load('tree-sitter')
         }
 
         use {
             "j-hui/fidget.nvim",
-            config = [[require("config.fidget")]],
+            config = load('fidget'),
         }
 
         use {
           "folke/trouble.nvim",
-          config = [[require("config.trouble")]]
+          config = load('trouble')
         }
 
         use {
             "simrat39/symbols-outline.nvim",
-            config = [[require("config.symbol-outline")]],
+            config = load('symbol-outline'),
         }
 
         use "sbdchd/neoformat"
         use {
             "ray-x/lsp_signature.nvim",
-            config = [[require("config.lsp_signature")]],
+            config = load('lsp_signature'),
         }
 
         use {
             "jose-elias-alvarez/null-ls.nvim",
-            config = [[require("config.null-ls")]],
+            config = load('null-ls'),
         }
         use "wellle/targets.vim"
 
@@ -129,7 +139,7 @@ return require("packer").startup {
 
         use {
             "glepnir/dashboard-nvim",
-            config = [[require("config.dashboard")]]
+            config = load('dashboard')
         }
         use "folke/twilight.nvim"
         use "rktjmp/lush.nvim"
@@ -167,7 +177,7 @@ return require("packer").startup {
             "rcarriga/vim-ultest",
             requires = {"vim-test/vim-test"},
             run = ":UpdateRemotePlugins",
-            config = [[require("config.ultest")]]
+            config = load('ultest')
         }
 
         -- development
@@ -183,8 +193,4 @@ return require("packer").startup {
 		},
 	},
 }
-
-
-
-
 

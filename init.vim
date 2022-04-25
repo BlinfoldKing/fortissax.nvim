@@ -1,8 +1,16 @@
+if filereadable(expand('~/.config/nvim/lua/plugins.lua'))
+	lua require('plugins')
+elseif filereadable(expand('/etc/nixos/nvim/lua/plugins.lua'))
+    lua assert(loadfile('/etc/nixos/nvim/lua/plugins.lua'))(true)
+endif
+
+if filereadable(expand('~/.config/nvim/lua/keymap.lua'))
+	lua require('keymap')
+elseif filereadable(expand('/etc/nixos/nvim/lua/keymap.lua'))
+    lua assert(loadfile('/etc/nixos/nvim/lua/keymap.lua'))(true)
+endif
+
 let g:coq_settings = { 'auto_start': 'shut-up' }
-
-lua require('plugins')
-lua require('keymap')
-
 syntax on
 
 set termguicolors
@@ -31,6 +39,8 @@ set foldmethod=indent
 set foldnestmax=10 
 set nofoldenable 
 
+let g:nvim_tree_hijack_netrw = 1
+
 
 try
 	colorscheme tokyodark
@@ -38,15 +48,17 @@ catch
 	colorscheme calvera
 endtry
 
-if filereadable(expand('~/.config/nvim/.vimrc'))
-    source ~/.config/nvim/.vimrc
+if filereadable(expand('/etc/nixos/nvim/.vimrc'))
+    source /etc/nixos/nvim/.vimrc
 endif
 
 if filereadable(expand('~/.vimrc'))
     source ~/.vimrc
 endif
 
-if filereadable(expand('/etc/nixos/nvim/.vimrc'))
-    source /etc/nixos/nvim/.vimrc
+if filereadable(expand('~/.config/nvim/.vimrc'))
+    source ~/.config/nvim/.vimrc
 endif
+
+
 
