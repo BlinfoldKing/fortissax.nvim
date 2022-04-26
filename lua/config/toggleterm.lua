@@ -4,6 +4,5 @@ require("toggleterm").setup({
     shading_factor = '1',
     float_opts = {
     border = 'single',
-    winblend = 3,
   }
 })
