@@ -124,6 +124,7 @@ return require("packer").startup {
             config = [[load('null-ls')]],
         }
         use "wellle/targets.vim"
+        use "elkowar/yuck.vim"
 
         -- theme and cosmetic
        use 'tiagovla/tokyodark.nvim'
