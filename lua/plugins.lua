@@ -163,7 +163,7 @@ return require("packer").startup {
             end
         }
         use {
-            "chentau/marks.nvim",
+            "chentoast/marks.nvim",
             config = function()
                 require'marks'.setup {}
             end
@@ -175,11 +175,20 @@ return require("packer").startup {
         use 'luukvbaal/stabilize.nvim'
 
         -- test and debug
+        -- use {
+        --     "rcarriga/vim-ultest",
+        --     requires = {"vim-test/vim-test"},
+        --     run = ":UpdateRemotePlugins",
+        --     config = [[load('ultest')]]
+        -- }
+
         use {
-            "rcarriga/vim-ultest",
-            requires = {"vim-test/vim-test"},
-            run = ":UpdateRemotePlugins",
-            config = [[load('ultest')]]
+          "nvim-neotest/neotest",
+          requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim"
+          }
         }
 
         -- development
