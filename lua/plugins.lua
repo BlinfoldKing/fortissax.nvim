@@ -89,6 +89,14 @@ return require("packer").startup {
         use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
         use 'neovim/nvim-lspconfig'
         use {
+            "williamboman/mason.nvim",
+            config = [[load('mason')]]
+        }
+        use { 
+            "williamboman/mason-lspconfig.nvim",
+            config = [[load('masonlsp')]]
+        }
+        use {
             'williamboman/nvim-lsp-installer',
             config = [[load('lsp_installer')]]
         }
@@ -127,10 +135,11 @@ return require("packer").startup {
         use "elkowar/yuck.vim"
 
         -- theme and cosmetic
-       use 'tiagovla/tokyodark.nvim'
-       use 'folke/tokyonight.nvim'
-       use 'yashguptaz/calvera-dark.nvim'
-       use {
+        use 'Mofiqul/dracula.nvim'
+        use 'tiagovla/tokyodark.nvim'
+        use 'folke/tokyonight.nvim'
+        use 'yashguptaz/calvera-dark.nvim'
+        use {
             'norcalli/nvim-colorizer.lua',
             config = function()
                 require('colorizer').setup()
