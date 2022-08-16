@@ -147,6 +147,7 @@ return require("packer").startup({
 		use("tiagovla/tokyodark.nvim")
 		use("folke/tokyonight.nvim")
 		use("yashguptaz/calvera-dark.nvim")
+		use("navarasu/onedark.nvim")
 		use({
 			"norcalli/nvim-colorizer.lua",
 			config = function()
@@ -157,8 +158,11 @@ return require("packer").startup({
 		use("thedenisnikulin/vim-cyberpunk")
 
 		use({
-			"glepnir/dashboard-nvim",
-			config = [[load('dashboard')]],
+			"startup-nvim/startup.nvim",
+			requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+			config = function()
+				require("startup").setup({ theme = "evil" })
+			end,
 		})
 		use("folke/twilight.nvim")
 		use("rktjmp/lush.nvim")
@@ -187,7 +191,7 @@ return require("packer").startup({
 
 		-- windows utils
 		use("sindrets/winshift.nvim")
-		use("luukvbaal/stabilize.nvim")
+		-- use("luukvbaal/stabilize.nvim")
 
 		use({
 			"nvim-neotest/neotest",

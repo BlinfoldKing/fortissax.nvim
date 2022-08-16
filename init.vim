@@ -15,33 +15,29 @@ syntax on
 
 set termguicolors
 
-" augroup fmt
-"   autocmd!
-"   autocmd BufWritePre * undojoin | Neoformat
-" augroup END
-
 tnoremap <Esc> <C-\><C-n>
 
-set hidden 
-set nu 
+set hidden
+set nu
 set nuw=6
-set cursorline 
-set splitbelow 
-set splitright 
-set tabstop=4 
-set shiftwidth=4 
-set softtabstop=4 
-set expandtab 
-set mouse=a 
-set background=dark 
-set t_Co=256 
-set encoding=UTF-8 
-set foldmethod=indent 
-set foldnestmax=10 
-set nofoldenable 
+set cursorline
+set splitbelow
+set splitright
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set mouse=a
+set background=dark
+set t_Co=256
+set encoding=UTF-8
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
 
 try
-	colorscheme tokyodark
+    let g:sonokai_style="andromeda"
+	colorscheme sonokai
 catch
 	colorscheme ron
 endtry
@@ -68,3 +64,8 @@ function! InsertTabWrapper()
 endfunction
 
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
+augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost * FormatWrite
+augroup END
