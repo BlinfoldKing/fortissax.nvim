@@ -65,6 +65,10 @@ return require("packer").startup {
             'lewis6991/gitsigns.nvim',
             config = [[load('gitsigns')]]
         }
+        use {
+            'sindrets/diffview.nvim',
+            config = [[load('diffview')]]
+        }
 
         -- util
         use {
@@ -98,7 +102,7 @@ return require("packer").startup {
             "williamboman/mason.nvim",
             config = [[load('mason')]]
         }
-        use { 
+        use {
             "williamboman/mason-lspconfig.nvim",
             config = [[load('masonlsp')]]
         }
@@ -115,17 +119,17 @@ return require("packer").startup {
             "j-hui/fidget.nvim",
             config = [[load('fidget')]],
         }
+        use({
+            "glepnir/lspsaga.nvim",
+            branch = "main",
+            config = function()
+                local saga = require("lspsaga")
 
-        use {
-          "folke/trouble.nvim",
-          config = [[load('trouble')]]
-        }
-
-        use {
-            "simrat39/symbols-outline.nvim",
-            config = [[load('symbol-outline')]],
-        }
-
+                saga.init_lsp_saga({
+                    -- your configuration
+                })
+            end,
+        })
         use "sbdchd/neoformat"
         use {
             "ray-x/lsp_signature.nvim",
