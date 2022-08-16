@@ -96,11 +96,15 @@ return require("packer").startup {
         use "tpope/vim-commentary"
 
         -- language support
-        use {'ms-jpq/coq_nvim', branch = 'coq'}
-        use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
+        -- use {'ms-jpq/coq_nvim', branch = 'coq'}
+        -- use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
         use {
             "williamboman/mason.nvim",
             config = [[load('mason')]]
+        }
+        use { 
+            'mhartington/formatter.nvim',
+            config = [[load('formatter')]]
         }
         use {
             "williamboman/mason-lspconfig.nvim",
@@ -110,11 +114,22 @@ return require("packer").startup {
             'neovim/nvim-lspconfig'
         }
         use {
+            'hrsh7th/nvim-cmp',
+            requires = {
+                'hrsh7th/cmp-nvim-lsp',
+                'hrsh7th/cmp-buffer',
+                'hrsh7th/cmp-path',
+                'hrsh7th/cmp-cmdline',
+                'L3MON4D3/LuaSnip',
+                'onsails/lspkind.nvim',
+            },
+            config = [[load('nvim_cmp')]]
+        }
+        use {
             'nvim-treesitter/nvim-treesitter',
             run = ':TSUpdate',
             config = [[load('tree-sitter')]]
         }
-
         use {
             "j-hui/fidget.nvim",
             config = [[load('fidget')]],
@@ -122,24 +137,8 @@ return require("packer").startup {
         use({
             "glepnir/lspsaga.nvim",
             branch = "main",
-            config = function()
-                local saga = require("lspsaga")
-
-                saga.init_lsp_saga({
-                    -- your configuration
-                })
-            end,
+            config = [[load('lspsaga')]],
         })
-        use "sbdchd/neoformat"
-        use {
-            "ray-x/lsp_signature.nvim",
-            config = [[load('lsp_signature')]],
-        }
-
-        use {
-            "jose-elias-alvarez/null-ls.nvim",
-            config = [[load('null-ls')]],
-        }
         use "wellle/targets.vim"
         use "elkowar/yuck.vim"
 
@@ -172,8 +171,6 @@ return require("packer").startup {
         }
 
         use "kyazdani42/nvim-web-devicons"
-        -- use "yamatsum/nvim-nonicons"
-        use "romgrk/nvim-treesitter-context"
         use {
             "nacro90/numb.nvim",
             config = function()

@@ -15,10 +15,10 @@ syntax on
 
 set termguicolors
 
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
+" augroup fmt
+"   autocmd!
+"   autocmd BufWritePre * undojoin | Neoformat
+" augroup END
 
 tnoremap <Esc> <C-\><C-n>
 
@@ -40,9 +40,6 @@ set foldmethod=indent
 set foldnestmax=10 
 set nofoldenable 
 
-let g:nvim_tree_hijack_netrw = 1
-
-
 try
 	colorscheme tokyodark
 catch
@@ -61,3 +58,13 @@ if filereadable(expand('~/.config/nvim/.vimrc'))
     source ~/.config/nvim/.vimrc
 endif
 
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
