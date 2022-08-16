@@ -1,23 +1,23 @@
-local tree_cb = require"nvim-tree.config".nvim_tree_callback
+local tree_cb = require("nvim-tree.config").nvim_tree_callback
 
-require("nvim-tree").setup {
-    disable_netrw = true,
-    hijack_netrw = true,
-    view = {
-        width = 25,
-        side = "left",
-        preserve_window_proportions = false,
-        number = false,
-        relativenumber = false,
-        signcolumn = "yes",
-        mappings = {
-            custom_only = false,
-            list = {
-            -- user mappings go here
-            },
-        },
-    },
-}
+require("nvim-tree").setup({
+	disable_netrw = true,
+	hijack_netrw = true,
+	view = {
+		width = 25,
+		side = "left",
+		preserve_window_proportions = false,
+		number = false,
+		relativenumber = false,
+		signcolumn = "yes",
+		mappings = {
+			custom_only = false,
+			list = {
+				-- user mappings go here
+			},
+		},
+	},
+})
 
 local g = vim.g
 
@@ -31,24 +31,24 @@ g.nvim_tree_icon_padding = " " -- one space by default, used for rendering the s
 g.nvim_tree_symlink_arrow = " >> " --  defaults to ' ➛ '. used as a separator between symlinks' source and target.
 g.nvim_tree_respect_buf_cwd = 1 -- 0 by default, will change cwd of nvim-tree to that of new buffer's when opening nvim-tree.
 
-g.nvim_tree_show_icons = {git = 1, folders = 1, files = 1, folder_arrows = 1}
+g.nvim_tree_show_icons = { git = 1, folders = 1, files = 1, folder_arrows = 1 }
 g.nvim_tree_icons = {
-    default = "",
-    symlink = "",
-    git = {
-        unstaged = "",
-        staged = "S",
-        unmerged = "",
-        renamed = "➜",
-        deleted = "",
-        untracked = "U",
-        ignored = "◌"
-    },
-    folder = {
-        default = "",
-        open = "",
-        empty = "",
-        empty_open = "",
-        symlink = ""
-    }
+	default = "",
+	symlink = "",
+	git = {
+		unstaged = "",
+		staged = "S",
+		unmerged = "",
+		renamed = "➜",
+		deleted = "",
+		untracked = "U",
+		ignored = "◌",
+	},
+	folder = {
+		default = "",
+		open = "",
+		empty = "",
+		empty_open = "",
+		symlink = "",
+	},
 }

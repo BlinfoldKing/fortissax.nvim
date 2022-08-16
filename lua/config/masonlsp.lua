@@ -1,19 +1,16 @@
 require("mason-lspconfig").setup()
 
-local custom_attach = function(client, bufnr)
+local custom_attach = function(client, bufnr) end
 
-end
+require("mason-lspconfig").setup_handlers({
+	function(server_name)
+		local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+		local opts = {
+			on_attach = custom_attach,
+			capabilities = capabilities,
+		}
 
-require("mason-lspconfig").setup_handlers {
-    function (server_name)
-        local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-        local opts = {
-            on_attach = custom_attach,
-            capabilities = capabilities
-        }
-
-        -- capabilities.offsetEncoding = "utf-8"
-        require("lspconfig")[server_name].setup(opts)
-    end,
-}
-
+		-- capabilities.offsetEncoding = "utf-8"
+		require("lspconfig")[server_name].setup(opts)
+	end,
+})

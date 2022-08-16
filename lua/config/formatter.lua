@@ -21,63 +21,63 @@ require("formatter").setup({
 		lua = {
 			require("formatter.filetypes.lua").stylua,
 		},
-        zig = {
+		zig = {
 			require("formatter.filetypes.zig").zigfmt,
-        },
-        fish = {
+		},
+		fish = {
 			require("formatter.filetypes.fish").fishindent,
-        },
-        html = {
+		},
+		html = {
 			require("formatter.filetypes.html").prettierd,
-        },
-        json = {
+		},
+		json = {
 			require("formatter.filetypes.json").prettierd,
-        },
-        ruby = {
+		},
+		ruby = {
 			require("formatter.filetypes.ruby").rubocop,
-        },
+		},
 		rust = {
 			require("formatter.filetypes.rust").rustfmt,
 		},
-        toml = {
+		toml = {
 			require("formatter.filetypes.toml").taplo,
-        },
-        yaml = {
+		},
+		yaml = {
 			require("formatter.filetypes.yaml").prettierd,
-        },
-        cmake = {
+		},
+		cmake = {
 			require("formatter.filetypes.cmake").cmakeformat,
-        },
-        ocaml = {
+		},
+		ocaml = {
 			require("formatter.filetypes.ocaml").ocamlformat,
-        },
-        elixir = {
+		},
+		elixir = {
 			require("formatter.filetypes.elixir").mixformat,
-        },
-        python = {
+		},
+		python = {
 			require("formatter.filetypes.python").black,
-        },
-        svelte = {
+		},
+		svelte = {
 			require("formatter.filetypes.svelte").prettier,
-        },
-        graphql = {
+		},
+		graphql = {
 			require("formatter.filetypes.graphql").prettierd,
-        },
-        markdown = {
+		},
+		markdown = {
 			require("formatter.filetypes.markdown").prettierd,
-        },
-        javascript = {
+		},
+		javascript = {
 			require("formatter.filetypes.svelte").prettierd,
-        },
-        typescript = {
+		},
+		typescript = {
 			require("formatter.filetypes.svelte").prettierd,
-        },
-        javascriptreact = {
+		},
+		javascriptreact = {
 			require("formatter.filetypes.svelte").prettierd,
-        },
-        typescriptreact = {
+		},
+		typescriptreact = {
 			require("formatter.filetypes.svelte").prettierd,
-        },
+		},
 		["*"] = {
 			require("formatter.filetypes.any").remove_trailing_whitespace,
 		},
