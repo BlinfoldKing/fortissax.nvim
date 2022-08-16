@@ -24,6 +24,7 @@ tnoremap <Esc> <C-\><C-n>
 
 set hidden 
 set nu 
+set nuw=6
 set cursorline 
 set splitbelow 
 set splitright 
@@ -45,7 +46,7 @@ let g:nvim_tree_hijack_netrw = 1
 try
 	colorscheme tokyodark
 catch
-	colorscheme calvera
+	colorscheme ron
 endtry
 
 if filereadable(expand('/etc/nixos/nvim/.vimrc'))
@@ -59,6 +60,4 @@ endif
 if filereadable(expand('~/.config/nvim/.vimrc'))
     source ~/.config/nvim/.vimrc
 endif
-
-
 

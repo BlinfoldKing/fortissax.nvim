@@ -35,8 +35,11 @@ return require("packer").startup {
         -- actual plugins list
         use "wbthomason/packer.nvim"
 
+
         -- TODO: reactivate when bug is fixed
         -- use 'ggandor/lightspeed.nvim'
+        --
+        -- ui and editor   
         use "easymotion/vim-easymotion"
         use {
             'akinsho/bufferline.nvim',
@@ -50,6 +53,10 @@ return require("packer").startup {
         use {
             "akinsho/toggleterm.nvim",
             config = [[load('toggleterm')]]
+        }
+        use {
+            "lukas-reineke/indent-blankline.nvim",
+            config = [[load('indent_blankline')]]
         }
 
         -- git
@@ -87,7 +94,6 @@ return require("packer").startup {
         -- language support
         use {'ms-jpq/coq_nvim', branch = 'coq'}
         use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
-        use 'neovim/nvim-lspconfig'
         use {
             "williamboman/mason.nvim",
             config = [[load('mason')]]
@@ -97,8 +103,7 @@ return require("packer").startup {
             config = [[load('masonlsp')]]
         }
         use {
-            'williamboman/nvim-lsp-installer',
-            config = [[load('lsp_installer')]]
+            'neovim/nvim-lspconfig'
         }
         use {
             'nvim-treesitter/nvim-treesitter',
@@ -182,14 +187,6 @@ return require("packer").startup {
         -- windows utils
         use 'sindrets/winshift.nvim'
         use 'luukvbaal/stabilize.nvim'
-
-        -- test and debug
-        -- use {
-        --     "rcarriga/vim-ultest",
-        --     requires = {"vim-test/vim-test"},
-        --     run = ":UpdateRemotePlugins",
-        --     config = [[load('ultest')]]
-        -- }
 
         use {
           "nvim-neotest/neotest",
