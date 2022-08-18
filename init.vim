@@ -69,3 +69,5 @@ augroup FormatAutogroup
   autocmd!
   autocmd BufWritePost * FormatWrite
 augroup END
+
+let g:blamer_enabled = 1

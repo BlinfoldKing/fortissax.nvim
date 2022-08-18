@@ -55,8 +55,9 @@ return require("packer").startup({
 			config = [[load('toggleterm')]],
 		})
 		use({
-			"lukas-reineke/indent-blankline.nvim",
-			config = [[load('indent_blankline')]],
+			"kevinhwang91/nvim-ufo",
+			requires = "kevinhwang91/promise-async",
+			config = [[load('ufo')]],
 		})
 
 		-- git
@@ -68,6 +69,9 @@ return require("packer").startup({
 		use({
 			"sindrets/diffview.nvim",
 			config = [[load('diffview')]],
+		})
+		use({
+			"APZelos/blamer.nvim",
 		})
 
 		-- util

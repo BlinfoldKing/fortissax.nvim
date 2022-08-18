@@ -24,9 +24,7 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" }, -- For luasnip users.
-	}, {
-		{ name = "buffer" },
-	}),
+	}, {}),
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
