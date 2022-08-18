@@ -143,6 +143,10 @@ return require("packer").startup({
 			branch = "main",
 			config = [[load('lspsaga')]],
 		})
+		use({
+			"mfussenegger/nvim-lint",
+			config = [[load('nvimlint')]],
+		})
 		use("wellle/targets.vim")
 		use("elkowar/yuck.vim")
 
