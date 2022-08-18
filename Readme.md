@@ -32,7 +32,7 @@ git clone https://github.com/BlinfoldKing/fortissax.nvim.git ~/.config/nvim
 
 after that, compile Fortissax packages by running:  
 ```bash
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' -c 'COQdeps'
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 ```
 
 ## Quickstart
