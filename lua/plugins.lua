@@ -159,6 +159,8 @@ return require("packer").startup({
 			end,
 		})
 		use("sainnhe/sonokai")
+		use("cpea2506/one_monokai.nvim")
+		use("kdheepak/monochrome.nvim")
 		use("thedenisnikulin/vim-cyberpunk")
 
 		use({
