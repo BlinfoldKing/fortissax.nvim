@@ -4,82 +4,82 @@ local filetype = {
 	},
 }
 if vim.g.fortissax_formatter_c then
-	filtype.c = { require("formatter.filetypes.c").clangdformat }
+	filetype.c = { require("formatter.filetypes.c").clangdformat }
 end
 if vim.g.fortissax_formatter_cs then
-	filtype.cs = { require("formatter.filetypes.cs").clangdformat }
+	filetype.cs = { require("formatter.filetypes.cs").clangdformat }
 end
 if vim.g.fortissax_formatter_go then
-	filtype.go = { require("formatter.filetypes.go").gofmt }
+	filetype.go = { require("formatter.filetypes.go").gofmt }
 end
 if vim.g.fortissax_formatter_sh then
-	filtype.sh = { require("formatter.filetypes.sh").shfmt }
+	filetype.sh = { require("formatter.filetypes.sh").shfmt }
 end
 if vim.g.fortissax_formatter_cpp then
-	filtype.cpp = { require("formatter.filetypes.cpp").clangdformat }
+	filetype.cpp = { require("formatter.filetypes.cpp").clangdformat }
 end
 if vim.g.fortissax_formatter_css then
-	filtype.css = { require("formatter.filetypes.css").prettierd }
+	filetype.css = { require("formatter.filetypes.css").prettierd }
 end
 if vim.g.fortissax_formatter_lua then
-	filtype.lua = { require("formatter.filetypes.lua").stylua }
+	filetype.lua = { require("formatter.filetypes.lua").stylua }
 end
 if vim.g.fortissax_formatter_zig then
-	filtype.zig = { require("formatter.filetypes.zig").zigfmt }
+	filetype.zig = { require("formatter.filetypes.zig").zigfmt }
 end
 if vim.g.fortissax_formatter_fish then
-	filtype.fish = { require("formatter.filetypes.fish").fishindent }
+	filetype.fish = { require("formatter.filetypes.fish").fishindent }
 end
 if vim.g.fortissax_formatter_html then
-	filtype.html = { require("formatter.filetypes.html").prettierd }
+	filetype.html = { require("formatter.filetypes.html").prettierd }
 end
 if vim.g.fortissax_formatter_json then
-	filtype.json = { require("formatter.filetypes.json").prettierd }
+	filetype.json = { require("formatter.filetypes.json").prettierd }
 end
 if vim.g.fortissax_formatter_ruby then
-	filtype.ruby = { require("formatter.filetypes.ruby").rubocop }
+	filetype.ruby = { require("formatter.filetypes.ruby").rubocop }
 end
 if vim.g.fortissax_formatter_rust then
-	filtype.rust = { require("formatter.filetypes.rust").rustfmt }
+	filetype.rust = { require("formatter.filetypes.rust").rustfmt }
 end
 if vim.g.fortissax_formatter_toml then
-	filtype.toml = { require("formatter.filetypes.toml").taplo }
+	filetype.toml = { require("formatter.filetypes.toml").taplo }
 end
 if vim.g.fortissax_formatter_yaml then
-	filtype.yaml = { require("formatter.filetypes.yaml").prettierd }
+	filetype.yaml = { require("formatter.filetypes.yaml").prettierd }
 end
 if vim.g.fortissax_formatter_cmake then
-	filtype.cmake = { require("formatter.filetypes.cmake").cmakeformat }
+	filetype.cmake = { require("formatter.filetypes.cmake").cmakeformat }
 end
 if vim.g.fortissax_formatter_ocaml then
-	filtype.ocaml = { require("formatter.filetypes.ocaml").ocamlformat }
+	filetype.ocaml = { require("formatter.filetypes.ocaml").ocamlformat }
 end
 if vim.g.fortissax_formatter_elixir then
-	filtype.elixir = { require("formatter.filetypes.elixir").mixformat }
+	filetype.elixir = { require("formatter.filetypes.elixir").mixformat }
 end
 if vim.g.fortissax_formatter_python then
-	filtype.python = { require("formatter.filetypes.python").black }
+	filetype.python = { require("formatter.filetypes.python").black }
 end
 if vim.g.fortissax_formatter_svelte then
-	filtype.svelte = { require("formatter.filetypes.svelte").prettier }
+	filetype.svelte = { require("formatter.filetypes.svelte").prettier }
 end
 if vim.g.fortissax_formatter_graphql then
-	filtype.graphql = { require("formatter.filetypes.graphql").prettierd }
+	filetype.graphql = { require("formatter.filetypes.graphql").prettierd }
 end
 if vim.g.fortissax_formatter_markdown then
-	filtype.markdown = { require("formatter.filetypes.markdown").prettierd }
+	filetype.markdown = { require("formatter.filetypes.markdown").prettierd }
 end
 if vim.g.fortissax_formatter_typescript then
-	filtype.typescript = { require("formatter.filetypes.typescript").prettierd }
+	filetype.typescript = { require("formatter.filetypes.typescript").prettierd }
 end
 if vim.g.fortissax_formatter_javascript then
-	filtype.javascript = { require("formatter.filetypes.javascript").prettierd }
+	filetype.javascript = { require("formatter.filetypes.javascript").prettierd }
 end
 if vim.g.fortissax_formatter_javascriptreact then
-	filtype.javascriptreact = { require("formatter.filetypes.javascriptreact").prettierd }
+	filetype.javascriptreact = { require("formatter.filetypes.javascriptreact").prettierd }
 end
 if vim.g.fortissax_formatter_typescriptreact then
-	filtype.typescriptreact = { require("formatter.filetypes.typescriptreact").prettierd }
+	filetype.typescriptreact = { require("formatter.filetypes.typescriptreact").prettierd }
 end
 
 require("formatter").setup({

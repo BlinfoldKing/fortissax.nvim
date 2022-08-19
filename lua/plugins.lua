@@ -67,8 +67,11 @@ return require("packer").startup({
 			config = [[load('gitsigns')]],
 		})
 		use({
-			"sindrets/diffview.nvim",
-			config = [[load('diffview')]],
+			"akinsho/git-conflict.nvim",
+			tag = "*",
+			config = function()
+				require("git-conflict").setup()
+			end,
 		})
 		use({
 			"APZelos/blamer.nvim",
