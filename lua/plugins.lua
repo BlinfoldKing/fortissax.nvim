@@ -100,8 +100,6 @@ return require("packer").startup({
 		use("tpope/vim-commentary")
 
 		-- language support
-		-- use {'ms-jpq/coq_nvim', branch = 'coq'}
-		-- use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
 		use({
 			"williamboman/mason.nvim",
 			config = [[load('mason')]],
