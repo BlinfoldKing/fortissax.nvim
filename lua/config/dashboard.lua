@@ -23,30 +23,38 @@ db.custom_header = {
 	"",
 }
 
+local desc = {
+	start = "Press <Space> to Start",
+	file = "Open File Tree        ",
+	config = "Open Config           ",
+	reload = "Reload Config         ",
+	help = "Help                  ",
+}
+
 db.custom_center = {
 	{
-		icon = "🐲\t",
-		desc = "Press <Space> to Start  ",
+		icon = "🐲 ",
+		desc = desc.start,
 		action = "WhichKey <space>",
 	},
 	{
-		icon = "📁\t",
-		desc = "Open File Tree  ",
+		icon = "📁 ",
+		desc = desc.file,
 		action = "NvimTreeToggle",
 	},
 	{
-		icon = "🔨\t",
-		desc = "Open Config    ",
+		icon = "🔨 ",
+		desc = desc.config,
 		action = "edit ~/.config/nvim/.vimrc",
 	},
 	{
-		icon = "🔃\t",
-		desc = "Reload Config  ",
+		icon = "🔃 ",
+		desc = desc.reload,
 		action = "source ~/.config/nvim/.vimrc",
 	},
 	{
-		icon = "💡\t",
-		desc = "Help    ",
+		icon = "💡 ",
+		desc = desc.help,
 		action = "Cheatsheet",
 	},
 }
