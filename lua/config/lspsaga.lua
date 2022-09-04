@@ -45,6 +45,9 @@ local function config_winbar()
 		["fugitive"] = true,
 		[".git"] = true,
 		["Fugitive"] = true,
+		["Trouble"] = true,
+		["Git"] = true,
+		["git"] = true,
 	} -- Ignore float windows and exclude filetype
 	if vim.api.nvim_win_get_config(0).zindex or exclude[vim.bo.filetype] then
 		vim.wo.winbar = ""

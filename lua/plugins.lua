@@ -153,6 +153,11 @@ return require("packer").startup({
 		})
 		use("wellle/targets.vim")
 		use("elkowar/yuck.vim")
+		use({
+			"folke/trouble.nvim",
+			requires = "kyazdani42/nvim-web-devicons",
+			config = [[load('trouble')]],
+		})
 
 		-- theme and cosmetic
 		use("Mofiqul/dracula.nvim")
