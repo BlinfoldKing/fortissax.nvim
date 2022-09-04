@@ -4,6 +4,11 @@ require("which-key").setup({
 
 local wk = require("which-key")
 wk.register({
+	c = {
+		name = "config",
+		r = { "<cmd>source %<cr>", "reload" },
+		e = { "<cmd>edit ~/.config/nvim/.vimrc<cr>", "edit .vimrc" },
+	},
 	f = {
 		name = "file and finder",
 		t = { "<cmd>NvimTreeToggle<cr>", "file tree" },
