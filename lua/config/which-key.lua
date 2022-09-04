@@ -44,8 +44,8 @@ wk.register({
 			r = { "<cmd>Lspsaga rename<CR>", "rename" },
 			a = { "<cmd>Lspsaga code_action<CR>", "code action" },
 			s = { "<cmd>Lspsaga signature_help<CR>", "signature help" },
-			D = { "<cmd>Lspsaga diagnostic_jump_prev<CR>", "prev diagnostic" },
-			d = { "<cmd>Lspsaga diagnostic_jump_next<CR>", "next diagnostic" },
+			D = { "<cmd>TroubleToggle workspace_diagnostics<CR>", "workspace diagnostic" },
+			d = { "<cmd>TroubleToggle document_diagnostics<CR>", "document diagnostic" },
 		},
 	},
 	t = {
