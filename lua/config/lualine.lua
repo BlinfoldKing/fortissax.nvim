@@ -3,5 +3,5 @@ require("lualine").setup({
 		section_separators = { left = "", right = "" },
 	},
 
-	extensions = { "nvim-tree", "fugitive" },
+	extensions = { "nvim-tree", "fugitive", "diffview" },
 })

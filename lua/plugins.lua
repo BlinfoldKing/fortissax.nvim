@@ -84,6 +84,15 @@ return require("packer").startup({
 			"kyazdani42/nvim-tree.lua",
 			config = [[load('nvim-tree')]],
 		})
+		use({
+			"sudormrfbin/cheatsheet.nvim",
+
+			requires = {
+				{ "nvim-telescope/telescope.nvim" },
+				{ "nvim-lua/popup.nvim" },
+				{ "nvim-lua/plenary.nvim" },
+			},
+		})
 
 		use({
 			"folke/which-key.nvim",

@@ -4,10 +4,12 @@ require("which-key").setup({
 
 local wk = require("which-key")
 wk.register({
+	["?"] = { "<cmd>Cheatsheet<cr>", "Cheatsheet" },
 	c = {
 		name = "config",
 		r = { "<cmd>source %<cr>", "reload" },
 		e = { "<cmd>edit ~/.config/nvim/.vimrc<cr>", "edit .vimrc" },
+		["?"] = { "<cmd>CheatsheetEdit<cr>", "edit cheatsheet" },
 	},
 	f = {
 		name = "file and finder",

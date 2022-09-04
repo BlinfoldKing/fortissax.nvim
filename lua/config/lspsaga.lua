@@ -48,6 +48,7 @@ local function config_winbar()
 		["Trouble"] = true,
 		["Git"] = true,
 		["git"] = true,
+		["diffview"] = true,
 	} -- Ignore float windows and exclude filetype
 	if vim.api.nvim_win_get_config(0).zindex or exclude[vim.bo.filetype] then
 		vim.wo.winbar = ""
