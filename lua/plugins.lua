@@ -36,14 +36,13 @@ return require("packer").startup({
 		-- actual plugins list
 		use({ "wbthomason/packer.nvim" })
 
-		-- TODO: reactivate when bug is fixed
-		-- use 'ggandor/lightspeed.nvim'
-		--
 		-- ui and editor
+		use("ggandor/lightspeed.nvim")
 		use({
 			"rcarriga/nvim-notify",
 			config = [[load('notify')]],
 		})
+		use("junegunn/vim-easy-align")
 		use("easymotion/vim-easymotion")
 		use({
 			"akinsho/bufferline.nvim",

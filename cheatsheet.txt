@@ -1,4 +1,4 @@
-Open file tree | tt
-Space Menu | <space>
-Search file | <space> ff
-Sempgrep file | <spaced> ft
+Open File Tree | tt
+Space Menu     | <space>
+Search File    | <space> ff
+Sempgrep File  | <space> ft

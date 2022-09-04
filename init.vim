@@ -35,6 +35,9 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 try
     let g:sonokai_style="andromeda"
 	colorscheme sonokai
