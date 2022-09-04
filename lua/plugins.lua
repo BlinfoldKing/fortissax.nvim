@@ -34,12 +34,16 @@ end
 return require("packer").startup({
 	function()
 		-- actual plugins list
-		use("wbthomason/packer.nvim")
+		use({ "wbthomason/packer.nvim" })
 
 		-- TODO: reactivate when bug is fixed
 		-- use 'ggandor/lightspeed.nvim'
 		--
 		-- ui and editor
+		use({
+			"rcarriga/nvim-notify",
+			config = [[load('notify')]],
+		})
 		use("easymotion/vim-easymotion")
 		use({
 			"akinsho/bufferline.nvim",
@@ -78,7 +82,6 @@ return require("packer").startup({
 		use({
 			"APZelos/blamer.nvim",
 		})
-
 		-- util
 		use({
 			"kyazdani42/nvim-tree.lua",
@@ -104,8 +107,7 @@ return require("packer").startup({
 		use({
 			"nvim-telescope/telescope.nvim",
 		})
-
-		use({ "nvim-telescope/telescope-symbols.nvim", after = "telescope.nvim" })
+		use({ "nvim-telescope/telescope-symbols.nvim" })
 
 		use("tpope/vim-surround")
 		use("tpope/vim-repeat")
@@ -124,11 +126,12 @@ return require("packer").startup({
 		})
 		use({
 			"williamboman/mason-lspconfig.nvim",
+			requires = {
+				"neovim/nvim-lspconfig",
+			},
 			config = [[load('masonlsp')]],
 		})
-		use({
-			"neovim/nvim-lspconfig",
-		})
+
 		use({
 			"hrsh7th/nvim-cmp",
 			requires = {
@@ -147,10 +150,7 @@ return require("packer").startup({
 			run = ":TSUpdate",
 			config = [[load('tree-sitter')]],
 		})
-		use({
-			"j-hui/fidget.nvim",
-			config = [[load('fidget')]],
-		})
+
 		use({
 			"glepnir/lspsaga.nvim",
 			branch = "main",

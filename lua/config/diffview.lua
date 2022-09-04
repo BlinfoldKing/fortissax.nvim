@@ -1,2 +1,2 @@
 -- temporaryly disabled, breaking changes
--- require("diffview").setup()
+require("diffview").setup()
