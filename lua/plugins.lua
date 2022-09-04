@@ -63,7 +63,6 @@ return require("packer").startup({
 			requires = "kevinhwang91/promise-async",
 			config = [[load('ufo')]],
 		})
-
 		-- git
 		use("tpope/vim-fugitive")
 		use({
@@ -185,13 +184,6 @@ return require("packer").startup({
 		use("kdheepak/monochrome.nvim")
 		use("thedenisnikulin/vim-cyberpunk")
 
-		use({
-			"startup-nvim/startup.nvim",
-			requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-			config = function()
-				require("startup").setup({ theme = "evil" })
-			end,
-		})
 		use("folke/twilight.nvim")
 		use("rktjmp/lush.nvim")
 
@@ -210,17 +202,24 @@ return require("packer").startup({
 			end,
 		})
 		use({
+			"sitiom/nvim-numbertoggle",
+			config = function()
+				require("numbertoggle").setup()
+			end,
+		})
+		use({
 			"chentoast/marks.nvim",
 			config = function()
 				require("marks").setup({})
 			end,
 		})
 		use("mg979/vim-visual-multi")
+		use({
+			"glepnir/dashboard-nvim",
+			config = [[load('dashboard')]],
+		})
 
 		-- windows utils
-		use("sindrets/winshift.nvim")
-		-- use("luukvbaal/stabilize.nvim")
-
 		use({
 			"nvim-neotest/neotest",
 			requires = {
