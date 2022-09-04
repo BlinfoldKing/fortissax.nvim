@@ -1,7 +1,5 @@
 local filetype = {
-	["*"] = {
-		require("formatter.filetypes.any").remove_trailing_whitespace,
-	},
+	["*"] = {},
 }
 if vim.g.fortissax_formatter_c then
 	filetype.c = { require("formatter.filetypes.c").clangdformat }

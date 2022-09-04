@@ -66,10 +66,8 @@ return require("packer").startup({
 			"lewis6991/gitsigns.nvim",
 			config = [[load('gitsigns')]],
 		})
--- Packer
-use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim', 
-			config = [[load('diffview')]],
-}
+		-- Packer
+		use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim", config = [[load('diffview')]] })
 		use({
 			"akinsho/git-conflict.nvim",
 			tag = "*",
