@@ -20,4 +20,4 @@ RUN apt-get install -yq tzdata && \
 
 WORKDIR /root/.config/nvim
 
-RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' -c 'COQdeps'
+RUN nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
