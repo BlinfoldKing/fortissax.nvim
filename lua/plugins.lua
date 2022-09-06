@@ -165,6 +165,34 @@ return require("packer").startup({
 			requires = "kyazdani42/nvim-web-devicons",
 			config = [[load('trouble')]],
 		})
+		use({
+			"mfussenegger/nvim-dap",
+			config = [[load('dap')]],
+		})
+		use({
+			"rcarriga/nvim-dap-ui",
+			config = [[load('dap_ui')]],
+		})
+		use({
+			"nvim-neotest/neotest",
+			requires = {
+				"nvim-lua/plenary.nvim",
+				"nvim-treesitter/nvim-treesitter",
+				"antoinemadec/FixCursorHold.nvim",
+
+				-- language support
+				"nvim-neotest/neotest-python",
+				"nvim-neotest/neotest-plenary",
+				"nvim-neotest/neotest-go",
+				"haydenmeade/neotest-jest",
+				"olimorris/neotest-rspec",
+				"sidlatau/neotest-dart",
+				"shunsambongi/neotest-testthat",
+				"olimorris/neotest-phpunit",
+				"rouge8/neotest-rust",
+			},
+			config = [[load('neotest')]],
+		})
 
 		-- theme and cosmetic
 		use("Mofiqul/dracula.nvim")
@@ -219,14 +247,6 @@ return require("packer").startup({
 		})
 
 		-- windows utils
-		use({
-			"nvim-neotest/neotest",
-			requires = {
-				"nvim-lua/plenary.nvim",
-				"nvim-treesitter/nvim-treesitter",
-				"antoinemadec/FixCursorHold.nvim",
-			},
-		})
 
 		-- development
 		use("jbyuki/instant.nvim")

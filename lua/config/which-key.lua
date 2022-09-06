@@ -61,15 +61,4 @@ wk.register({
 		s = { "<cmd>WinShift<cr>", "shift window" },
 	},
 	q = { "<cmd>qa!<cr>", "close all and exit" },
-	-- u = {
-	-- 	name = "testing",
-	-- 	tt = { "<cmd>Ultest<cr>", "run all test" },
-	-- 	ts = { "<cmd>Ultest<cr>", "stop all test" },
-	-- 	nn = { "<cmd>UltestNearest<cr>", "run nearest test" },
-	-- 	ns = { "<cmd>UltestNearest<cr>", "stop nearest test" },
-	-- 	o = { "<cmd>UltestOutput<cr>", "test output" },
-	-- 	s = { "<cmd>UltestSummary<cr>", "test summary" },
-	-- 	dd = { "<cmd>UltestDebug<cr>", "debug all test" },
-	-- 	dn = { "<cmd>UltestDebugNearest<cr>", "debug nearest test" },
-	-- },
 }, { prefix = "<space>" })
