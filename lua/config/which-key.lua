@@ -1,10 +1,15 @@
 require("which-key").setup({
 	triggers = { "<space>" },
+	window = {
+		position = "bottom", -- bottom, top
+		winblend = 0,
+	},
 })
 
 local wk = require("which-key")
 wk.register({
 	["?"] = { "<cmd>Cheatsheet<cr>", "Cheatsheet" },
+	["<Space>"] = { "<Plug>(easymotion-prefix)", "Easymotion" },
 	c = {
 		name = "config",
 		r = { "<cmd>source %<cr>", "reload" },
