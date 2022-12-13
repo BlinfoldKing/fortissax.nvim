@@ -1,4 +1,4 @@
-local nix_mode, _ = ...
+local nix_mode, window_mode, _ = ...
 
 local execute = vim.api.nvim_command
 local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -25,7 +25,9 @@ local use = packer.use
 function load(module)
 	if nix_mode == true then
 		return dofile(string.format("/etc/nixos/nvim/lua/config/%s.lua", module))
-	else
+	elseif window_mode == true then
+		return dofile(string.format("C:\\Users\\ganes\\AppData\\Local\\nvim\\lua\\config/%s.lua", module))
+    else
 		return require(string.format("config.%s", module))
 	end
 end
@@ -75,9 +77,6 @@ return require("packer").startup({
 			config = function()
 				require("git-conflict").setup()
 			end,
-		})
-		use({
-			"APZelos/blamer.nvim",
 		})
 		-- util
 		use({
@@ -211,7 +210,6 @@ return require("packer").startup({
 		use("thedenisnikulin/vim-cyberpunk")
 
 		use("folke/twilight.nvim")
-		use("rktjmp/lush.nvim")
 
 		use({
 			"petertriho/nvim-scrollbar",

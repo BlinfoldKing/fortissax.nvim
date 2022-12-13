@@ -2,12 +2,16 @@ if filereadable(expand('~/.config/nvim/lua/plugins.lua'))
 	lua require('plugins')
 elseif filereadable(expand('/etc/nixos/nvim/lua/plugins.lua'))
     lua assert(loadfile('/etc/nixos/nvim/lua/plugins.lua'))(true)
+elseif filereadable(expand('C:\\Users\\ganes\\AppData\\Local\\nvim\\lua\\plugins.lua'))
+    lua assert(loadfile('C:\\Users\\ganes\\AppData\\Local\\nvim\\lua\\plugins.lua'))(false, true)
 endif
 
 if filereadable(expand('~/.config/nvim/lua/keymap.lua'))
 	lua require('keymap')
 elseif filereadable(expand('/etc/nixos/nvim/lua/keymap.lua'))
     lua assert(loadfile('/etc/nixos/nvim/lua/keymap.lua'))(true)
+elseif filereadable(expand('C:\\Users\\ganes\\AppData\\Local\\nvim\\lua\\keymap.lua'))
+    lua assert(loadfile('C:\\Users\\ganes\\AppData\\Local\\nvim\\lua\\keymap.lua'))(false, true)
 endif
 
 let g:coq_settings = { 'auto_start': 'shut-up' }
