@@ -27,7 +27,7 @@ function load(module)
 		return dofile(string.format("/etc/nixos/nvim/lua/config/%s.lua", module))
 	elseif window_mode == true then
 		return dofile(string.format("C:\\Users\\ganes\\AppData\\Local\\nvim\\lua\\config/%s.lua", module))
-    else
+	else
 		return require(string.format("config.%s", module))
 	end
 end
@@ -208,6 +208,10 @@ return require("packer").startup({
 		use("cpea2506/one_monokai.nvim")
 		use("kdheepak/monochrome.nvim")
 		use("thedenisnikulin/vim-cyberpunk")
+		use({
+			"rose-pine/neovim",
+			as = "rose-pine",
+		})
 
 		use("folke/twilight.nvim")
 

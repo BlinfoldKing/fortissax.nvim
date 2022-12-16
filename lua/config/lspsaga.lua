@@ -13,7 +13,6 @@ saga.init_lsp_saga({
 		enable = true,
 		separator = "  ",
 		show_file = true,
-		click_support = true,
 	},
 })
 
