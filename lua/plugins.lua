@@ -110,6 +110,10 @@ return require("packer").startup({
 		use("jiangmiao/auto-pairs")
 		use("ervandew/supertab")
 		use("tpope/vim-commentary")
+		use({
+			"nathom/filetype.nvim",
+			config = [[load('filetype')]],
+		})
 
 		-- language support
 		use({
@@ -125,7 +129,7 @@ return require("packer").startup({
 			requires = {
 				"neovim/nvim-lspconfig",
 			},
-			config = [[load('masonlsp')]],
+			config = [[load('lsp')]],
 		})
 
 		use({
@@ -143,9 +147,21 @@ return require("packer").startup({
 		})
 		use({
 			"nvim-treesitter/nvim-treesitter",
+			requires = {
+				"IndianBoy42/tree-sitter-just",
+			},
 			run = ":TSUpdate",
 			config = [[load('tree-sitter')]],
 		})
+		use({
+			"m-demare/hlargs.nvim",
+			config = function()
+				require("hlargs").setup()
+			end,
+		})
+
+		use("ron-rs/ron.vim")
+		use("NoahTheDuke/vim-just")
 
 		use({
 			"glepnir/lspsaga.nvim",
@@ -212,6 +228,7 @@ return require("packer").startup({
 			"rose-pine/neovim",
 			as = "rose-pine",
 		})
+		use("pineapplegiant/spaceduck")
 
 		use("folke/twilight.nvim")
 
@@ -230,9 +247,9 @@ return require("packer").startup({
 			end,
 		})
 		use({
-			"sitiom/nvim-numbertoggle",
+			"nkakouros-original/numbers.nvim",
 			config = function()
-				require("numbertoggle").setup()
+				require("numbers").setup()
 			end,
 		})
 		use({

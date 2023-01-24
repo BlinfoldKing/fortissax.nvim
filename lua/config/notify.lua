@@ -1,10 +1,25 @@
 notify = require("notify")
 
-vim.notify = notify
+local max_width = 70
+notify.setup({
+	max_width = max_width,
+})
 
-function _G.notify(...)
-	local notify = require("notify")
-	notify(...)
+local function split_string(msg, size)
+	local lines = {}
+
+	for i = 1, #msg, size do
+		lines[#lines + 1] = string:sub(i, i + size - 1)
+	end
+
+	return lines
+end
+
+vim.notify = function(...)
+	-- if msg == nil then
+	-- 	return notify(msg, ...)
+	-- end
+	return notify(...)
 end
 
 local client_notifs = {}

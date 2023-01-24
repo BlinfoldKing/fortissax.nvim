@@ -78,3 +78,4 @@ augroup FormatAutogroup
 augroup END
 
 let g:blamer_enabled = 1
+au BufNewFile,BufRead *.wgsl set filetype=wgsl
