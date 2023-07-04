@@ -15,3 +15,5 @@ require("nvim-treesitter.parsers").get_parser_configs().just = {
 	},
 	maintainers = { "@IndianBoy42" },
 }
+
+require("nvim-treesitter.install").compilers = { "zig" }

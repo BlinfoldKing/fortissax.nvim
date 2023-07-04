@@ -214,6 +214,7 @@ return require("packer").startup({
 		use("folke/tokyonight.nvim")
 		use("yashguptaz/calvera-dark.nvim")
 		use("navarasu/onedark.nvim")
+		use("ray-x/starry.nvim")
 		use({
 			"norcalli/nvim-colorizer.lua",
 			config = function()
@@ -222,6 +223,7 @@ return require("packer").startup({
 		})
 		use("sainnhe/sonokai")
 		use("cpea2506/one_monokai.nvim")
+		use("phanviet/vim-monokai-pro")
 		use("kdheepak/monochrome.nvim")
 		use("thedenisnikulin/vim-cyberpunk")
 		use({
